@@ -13,7 +13,7 @@ PIP = $(PYTHON) -m pip
 ifneq ("$(wildcard .env)","")
     include .env
 else
-    $(shell echo -e "OPENAI_API_ORGANIZATION=PLEASE-ADD-ME\nOPENAI_API_KEY=PLEASE-ADD-ME\nENVIRONMENT=dev\n" >> .env)
+    $(shell echo -e "OPENAI_API_KEY=PLEASE-ADD-ME\nENVIRONMENT=dev\n" >> .env)
 endif
 
 .PHONY: analyze pre-commit init lint clean test build release
