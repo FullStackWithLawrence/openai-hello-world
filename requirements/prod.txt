@@ -1,0 +1,10 @@
+# -----------------------------------------------------------------------------
+# written by: Lawrence McDaniel
+#             https://lawrencemcdaniel.com
+#
+# usage:      Python run-time requirements for the OpenAI API
+# -----------------------------------------------------------------------------
+
+
+python-dotenv==1.0.0
+openai==1.6.1

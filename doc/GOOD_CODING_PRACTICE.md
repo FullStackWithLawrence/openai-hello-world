@@ -39,7 +39,6 @@ Linters and formatters are tools used in programming to analyze and improve the 
 
 ### Code Analysis
 
-- [ESLint](https://eslint.org/): an open source project that helps you find and fix problems with your JavaScript and JSX code.
 - [Flake8](https://flake8.pycqa.org/en/latest/): provides Python syntax checking, naming style enforcement, code style enforcement, and [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) analysis.
 - [pylint](https://pypi.org/project/pylint/): a static code analyser for Python. It analyses your code without actually running it. It checks for errors, enforces a coding standard, looks for code smells, and can make suggestions about how the code could be refactored.
 - [bandit](https://github.com/PyCQA/bandit): a tool designed to find common security issues in Python code.

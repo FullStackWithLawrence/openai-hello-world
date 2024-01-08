@@ -47,7 +47,7 @@ on:
     paths:
       - "**.py"
       - "**.js"
-      - "**.requirements.txt"
+      - "**./requirements/**"
       - "**.package.json"
       - "./app/**"
 
@@ -109,7 +109,7 @@ jobs:
         id: file_changes
         run: |
           echo "::set-output name=files_changed::$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.py$' || true)"
-          echo "::set-output name=requirements_changed::$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep 'requirements.txt$' || true)"
+          echo "::set-output name=requirements_changed::$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep 'requirements$' || true)"
 
       - name: Run Python tests
         if: steps.file_changes.outputs.files_changed != '' || steps.file_changes.outputs.requirements_changed != ''

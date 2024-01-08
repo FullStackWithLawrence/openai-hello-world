@@ -2,10 +2,7 @@
 # written by: Lawrence McDaniel
 #             https://lawrencemcdaniel.com
 #
-# usage:      Python requirements for AWS Lambda functions. Create a virtual
-#             environment in the root of this repository named `venv`. Terraform
-#             modules will look for and include these requirements in the zip
-#             packages for each Python-based Lambda function.
+# usage:      Python local development requirements
 # -----------------------------------------------------------------------------
 
 
@@ -22,10 +19,3 @@ bandit==1.7.6
 pydocstringformatter==0.7.3
 tox==4.11.4
 codespell==2.2.6
-
-# production
-# ------------
-python-dotenv==1.0.0
-openai==1.6.1
-langchain
-langchain-experimental
