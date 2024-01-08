@@ -61,7 +61,7 @@ lint:
 	pylint ./app/**/*.py
 
 clean:
-	rm -rf venv
+	rm -rf venv node_modules app/__pycache__ package-lock.json
 
 build:
 	docker build -t ${CONTAINER_NAME} .
