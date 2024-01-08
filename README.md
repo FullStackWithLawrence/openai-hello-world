@@ -13,6 +13,8 @@
 
 A Python "Hello World" application that demonstrates the OpenAI API and usage of Docker Compose to containerize your project. This is a command line utility that returns the value "Hello World" in the written language of your choice.
 
+Python code is [located here](./app/)
+
 ## Quick Start
 
 1. Setup the application
