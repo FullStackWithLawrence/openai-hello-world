@@ -30,7 +30,7 @@ make init    # create a virtual environment
 ### Run Python on the command line
 
 ```console
-source venv/bin/activate
+source activate
 python -m app.hello_world
 ```
 
