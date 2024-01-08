@@ -35,30 +35,6 @@ runs:
           exit 1
         fi
 
-    - name: Check for langchain in requirements
-      shell: bash
-      run: |
-        if ! grep -q "langchain" requirements/prod.txt; then
-          echo "langchain not found in requirements/prod.txt" >&2
-          exit 1
-        fi
-
-    - name: Check for langchain-experimental in requirements
-      shell: bash
-      run: |
-        if ! grep -q "langchain-experimental" requirements/prod.txt; then
-          echo "langchain-experimental not found in requirements/prod.txt" >&2
-          exit 1
-        fi
-
-    - name: Check for pinecone-client in requirements
-      shell: bash
-      run: |
-        if ! grep -q "pinecone-client" requirements/prod.txt; then
-          echo "pinecone-client not found in requirements/prod.txt" >&2
-          exit 1
-        fi
-
     - name: Cache Python dependencies
       uses: actions/cache@v3
       with:
@@ -95,14 +71,10 @@ runs:
         touch ./.env
         echo "OPENAI_API_ORGANIZATION=${{ env.OPENAI_API_ORGANIZATION }}" >> ./.env
         echo "OPENAI_API_KEY=${{ env.OPENAI_API_KEY }}" >> ./.env
-        echo "PINECONE_API_KEY=${{ env.PINECONE_API_KEY }}" >> ./.env
-        echo "PINECONE_ENVIRONMENT=${{ env.PINECONE_ENVIRONMENT }}" >> ./.env
         echo "DEBUG_MODE=False" >> ./.env
       env:
         OPENAI_API_ORGANIZATION: ${{ inputs.openai-api-organization }}
         OPENAI_API_KEY: ${{ inputs.openai-api-key }}
-        PINECONE_API_KEY: ${{ inputs.pinecone-api-key }}
-        PINECONE_ENVIRONMENT: ${{ inputs.pinecone-environment }}
 
     - name: Run Python unit tests
       shell: bash
