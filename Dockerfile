@@ -3,18 +3,20 @@
 FROM python:3.11
 
 # Set the working directory to /app
-WORKDIR /app
+WORKDIR /dist
 
 # Copy the current directory contents into the container at /app
-COPY python/ /app
+COPY app /dist/app
+COPY requirements/prod.txt requirements.txt
 
 # Set environment variables
 ENV ENVIRONMENT dev
 ENV OPENAI_API_KEY ""
+ENV PYTHONPATH /dist
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 
 # Run the application when the container launches
-CMD ["python", "console.py"]
+CMD ["python", "app/hello_world.py"]

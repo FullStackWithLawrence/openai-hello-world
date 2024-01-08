@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+CONTAINER_NAME := hello_world
 
 ifeq ($(OS),Windows_NT)
     PYTHON = python.exe
@@ -15,7 +16,7 @@ else
     $(shell echo -e "OPENAI_API_ORGANIZATION=PLEASE-ADD-ME\nOPENAI_API_KEY=PLEASE-ADD-ME\nENVIRONMENT=dev\n" >> .env)
 endif
 
-.PHONY: analyze pre-commit init lint clean test
+.PHONY: analyze pre-commit init lint clean test build release
 
 # Default target executed when no arguments are given to make.
 all: help
@@ -44,7 +45,8 @@ init:
 	$(PYTHON) -m venv venv && \
 	$(ACTIVATE_VENV) && \
 	$(PIP) install --upgrade pip && \
-	$(PIP) install -r requirements.txt && \
+	$(PIP) install -r requirements/dev.txt && \
+	$(PIP) install -r requirements/prod.txt && \
 	deactivate && \
 	pre-commit install
 
@@ -60,6 +62,13 @@ lint:
 
 clean:
 	rm -rf venv
+
+build:
+	docker build -t ${CONTAINER_NAME} .
+
+run:
+	source .env && \
+	docker run -it -e OPENAI_API_KEY=${OPENAI_API_KEY} -e ENVIRONMENT=prod ${CONTAINER_NAME}
 
 
 ######################

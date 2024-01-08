@@ -3,7 +3,6 @@
 
 run: python3 -m app.hello_world "Chinese"
 """
-import argparse
 import random
 
 import openai
@@ -18,6 +17,7 @@ def hello_world(language: str = None):
     if language is None:
         random_index = random.randint(0, len(settings.LANGUAGES) - 1)
         language = settings.LANGUAGES[random_index]
+    languages_str = ", ".join(settings.LANGUAGES)
     prompt = f"Translate 'Hello World' to {language}"
     model = "gpt-3.5-turbo"
     temperature = 0.0
@@ -25,9 +25,7 @@ def hello_world(language: str = None):
     messages = [
         {
             "role": "system",
-            "content": """You are a helpful assistant who speaks English, Spanish,
-             Italian, French, Gereman, Polish, Hebrew, Chinese, Mandarin, Japanese, Hindi, Russian,
-             Portuguese, Bengali, Urdu, Indonesian, Nigerian Pidgin, Marathi, Telugu, Turkish and Tamil.
+            "content": f"""You are a helpful assistant who speaks {languages_str}
              You should respond with the correct, closest translation of "hello world" based on the language that the user
              requests. Your response should be in the format: '[hello world translation] -- ([language])'.""",
         },
@@ -46,10 +44,6 @@ def hello_world(language: str = None):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Hello World")
-    parser.add_argument(
-        "--language", type=str, help="Your language", nargs="?", default=None, choices=settings.LANGUAGES
-    )
-    args = parser.parse_args()
-
-    hello_world(language=args.language)
+    print("Hello World")
+    input_language = input("Your language: ")
+    hello_world(language=input_language)
