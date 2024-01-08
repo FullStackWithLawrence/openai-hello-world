@@ -58,7 +58,9 @@ def hello_world(language: str = None):
     # Print the response
     # -------------------------------------------------------------------------
     return_dict = response.model_dump()
-    print(return_dict["choices"][0]["message"]["content"])
+    retval = return_dict["choices"][0]["message"]["content"]
+    print(retval)
+    return retval
 
 
 if __name__ == "__main__":

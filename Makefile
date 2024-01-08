@@ -51,7 +51,7 @@ init:
 	pre-commit install
 
 test:
-	echo "No tests yet"
+	python -m unittest discover -s app/
 
 lint:
 	isort .
