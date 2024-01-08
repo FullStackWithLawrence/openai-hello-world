@@ -8,17 +8,17 @@ from dotenv import load_dotenv
 from app.exceptions import ConfigurationException
 
 
+# Load environment variables from .env file if available
 load_dotenv()
+
+# OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", None)
-
-
-if OPENAI_API_KEY in (None, "PLEASE-ADD-ME"):
-    raise ConfigurationException("No OpenAI API key found. Please add it to your .env file.")
-
 OPENAI_API_MODEL = "gpt-3.5-turbo"
 OPENAI_API_TEMPERATURE = 0.0
 OPENAI_API_MAX_TOKENS = 64
 
+
+# application settings
 LANGUAGES = [
     "English",
     "Spanish",
@@ -42,3 +42,7 @@ LANGUAGES = [
     "Turkish",
     "Tamil",
 ]
+
+# application configuration validations
+if OPENAI_API_KEY in (None, "PLEASE-ADD-ME"):
+    raise ConfigurationException("No OpenAI API key found. Please add it to your .env file.")
