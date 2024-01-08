@@ -3,7 +3,7 @@
 A simple Python example of using the OpenAI API to translate "Hello World" to a popular language.
 
 to run in dev:
-    python -m app.hello_world "Chinese"
+    python -m app.hello_world
 
 to run in prod:
     CONTAINER_NAME=hello_world

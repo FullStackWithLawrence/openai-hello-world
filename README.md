@@ -29,7 +29,7 @@ make init    # create a virtual environment
 
 ```console
 source venv/bin/activate
-python -m app.hello_world "Chinese"
+python -m app.hello_world
 ```
 
 ### Build and run with Docker
