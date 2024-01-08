@@ -14,7 +14,33 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![hack.d Lawrence McDaniel](https://img.shields.io/badge/hack.d-Lawrence%20McDaniel-orange.svg)](https://lawrencemcdaniel.com)
 
-A Python "Hello World" application that also demonstrates the OpenAI API and usage of Docker.
+A Python "Hello World" application that demonstrates the OpenAI API and usage of Docker Compose to containerize your project. This is a command line utility that returns the value "Hello World" in the written language of your choice.
+
+## Quick Start
+
+```console
+git clone https://github.com/FullStackWithLawrence/openai-hello-world.git
+cd openai-hello-world
+make init    # create a virtual environment
+make build   # run Docker compose to containerize your application
+make run     # run the application as a Docker container
+```
+
+To run from the command line:
+
+```console
+source venv/bin/activate
+python3 -m app.hello_world "Chinese"
+```
+
+Sample output:
+
+```console
+% make run
+Hello World
+Your language: Mandarin
+你好，世界 -- (Mandarin)
+```
 
 ## Requirements
 
@@ -24,7 +50,8 @@ A Python "Hello World" application that also demonstrates the OpenAI API and usa
   _If you're new to OpenAI API then see [How to Get an OpenAI API Key](./doc/OPENAI_API_GETTING_STARTED_GUIDE.md)_
 - [Python 3.11](https://www.python.org/downloads/): for creating virtual environment used for building AWS Lambda Layer, and locally by pre-commit linters and code formatters.
 - [NodeJS](https://nodejs.org/en/download): used with NPM for local ReactJS developer environment, and for configuring/testing Semantic Release.
-- [Docker Compose](https://docs.docker.com/compose/install/): used to create production container.
+- [Docker](https://docs.docker.com/): the Docker run-time environment for your operating system. Can be installed as a desktop application or as a service (daemon)
+- [Docker Compose](https://docs.docker.com/compose/install/): used to create your production container.
 
 ## Documentation
 
