@@ -15,6 +15,8 @@ A Python "Hello World" application that demonstrates the OpenAI API and usage of
 
 ## Quick Start
 
+1. Setup the application
+
 ```console
 git clone https://github.com/FullStackWithLawrence/openai-hello-world.git
 cd openai-hello-world
@@ -23,12 +25,7 @@ make build   # run Docker compose to containerize your application
 make run     # run the application as a Docker container
 ```
 
-To run from the command line:
-
-```console
-source venv/bin/activate
-python3 -m app.hello_world "Chinese"
-```
+2. Configure OpenAI API. Find and open the file `.env` in the root folder of the project. Add your OpenAI API key, save and close the file. See [OpenAI API Getting Started](./doc/OPENAI_API_GETTING_STARTED_GUIDE.md) for detailed setup instructions.
 
 Sample output:
 
