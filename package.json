@@ -10,6 +10,5 @@
     "@semantic-release/release-notes-generator": "^12.1.0",
     "typescript": "^5.2.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

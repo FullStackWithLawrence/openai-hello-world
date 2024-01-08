@@ -17,7 +17,6 @@
 
 A Python "Hello World" application that also demonstrates the OpenAI API and usage of Docker.
 
-
 ## Requirements
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). _pre-installed on Linux and macOS_

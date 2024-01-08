@@ -118,4 +118,3 @@ jobs:
           python-version: "${{ env.python-version}}"
           openai-api-organization: "${{ secrets.OPENAI_API_ORGANIZATION }}"
           openai-api-key: "${{ secrets.OPENAI_API_KEY }}"
-

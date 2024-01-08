@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 
 run: python3 -m app.hello_world "Chinese"
@@ -24,8 +25,8 @@ def hello_world(language: str = None):
     messages = [
         {
             "role": "system",
-            "content": """You are a helpful assistant who speaks English, Spanish, 
-             Italian, French, Gereman, Polish, Hebrew, Chinese, Mandarin, Japanese, Hindi, Russian, 
+            "content": """You are a helpful assistant who speaks English, Spanish,
+             Italian, French, Gereman, Polish, Hebrew, Chinese, Mandarin, Japanese, Hindi, Russian,
              Portuguese, Bengali, Urdu, Indonesian, Nigerian Pidgin, Marathi, Telugu, Turkish and Tamil.
              You should respond with the correct, closest translation of "hello world" based on the language that the user
              requests. Your response should be in the format: '[hello world translation] -- ([language])'.""",
