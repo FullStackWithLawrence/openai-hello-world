@@ -2,11 +2,8 @@
 
 [![FullStackWithLawrence](https://a11ybadges.com/badge?text=FullStackWithLawrence&badgeColor=orange&logo=youtube&logoColor=282828)](https://www.youtube.com/@FullStackWithLawrence)<br>
 [![OpenAI](https://a11ybadges.com/badge?logo=openai)](https://platform.openai.com/)
-[![Amazon AWS](https://a11ybadges.com/badge?logo=amazonaws)](https://aws.amazon.com/)
-[![ReactJS](https://a11ybadges.com/badge?logo=react)](https://react.dev/)
+[![Docker](https://a11ybadges.com/badge?logo=docker)](https://docs.docker.com/)
 [![Python](https://a11ybadges.com/badge?logo=python)](https://www.python.org/)
-[![Terraform](https://a11ybadges.com/badge?logo=terraform)](https://www.terraform.io/)<br>
-[![12-Factor](https://img.shields.io/badge/12--Factor-Compliant-green.svg)](./doc/Twelve_Factor_Methodology.md)
 ![Unit Tests](https://github.com/FullStackWithLawrence/openai-hello-world/actions/workflows/testsPython.yml/badge.svg?branch=main)
 ![GHA pushMain Status](https://img.shields.io/github/actions/workflow/status/FullStackWithLawrence/openai-hello-world/pushMain.yml?branch=main)
 ![Auto Assign](https://github.com/FullStackwithLawrence/openai-hello-world/actions/workflows/auto-assign.yml/badge.svg)
