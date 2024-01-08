@@ -36,8 +36,7 @@ pre-commit:
 	pre-commit run --all-files
 
 # ---------------------------------------------------------
-# create python virtual environments for dev as well
-# as for the Lambda layer.
+# create python virtual environments for prod
 # ---------------------------------------------------------
 init:
 	make clean
@@ -45,10 +44,18 @@ init:
 	$(PYTHON) -m venv venv && \
 	$(ACTIVATE_VENV) && \
 	$(PIP) install --upgrade pip && \
-	$(PIP) install -r requirements/dev.txt && \
 	$(PIP) install -r requirements/prod.txt && \
 	deactivate && \
 	pre-commit install
+
+# ---------------------------------------------------------
+# create python virtual environments for dev
+# ---------------------------------------------------------
+init-dev:
+	make init
+	$(ACTIVATE_VENV) && \
+	$(PIP) install -r requirements/dev.txt && \
+	deactivate && \
 
 test:
 	python -m unittest discover -s app/
