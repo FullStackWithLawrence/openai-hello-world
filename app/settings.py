@@ -44,5 +44,5 @@ LANGUAGES = [
 ]
 
 # application configuration validations
-if OPENAI_API_KEY in (None, "PLEASE-ADD-ME"):
+if OPENAI_API_KEY in (None, "SET-ME-PLEASE"):
     raise ConfigurationException("No OpenAI API key found. Please add it to your .env file.")
