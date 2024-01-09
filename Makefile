@@ -1,7 +1,6 @@
 
 SHELL := /bin/bash
 REPO_NAME := openai-hello-world
-TAGNAME := "test"
 
 ifeq ($(OS),Windows_NT)
     PYTHON = python.exe
@@ -78,9 +77,9 @@ docker-build:
 
 docker-push:
 	source .env && \
-	docker tag ${DOCKERHUB_USERNAME}/${REPO_NAME} ${DOCKERHUB_USERNAME}/${REPO_NAME}:${TAGNAME} && \
+	docker tag ${DOCKERHUB_USERNAME}/${REPO_NAME} ${DOCKERHUB_USERNAME}/${REPO_NAME}:latest && \
 	echo "${DOCKERHUB_ACCESS_TOKEN}" | docker login --username=${DOCKERHUB_USERNAME} --password-stdin && \
-	docker push ${DOCKERHUB_USERNAME}/${REPO_NAME}:${TAGNAME}
+	docker push ${DOCKERHUB_USERNAME}/${REPO_NAME}:latest
 
 docker-run:
 	source .env && \
