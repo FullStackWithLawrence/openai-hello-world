@@ -27,7 +27,7 @@ make init    # create a virtual environment
 
 2. Configure OpenAI API. Find and open the file `.env` in the root folder of the project. Add your OpenAI API key, save and close the file. See [OpenAI API Getting Started](./doc/OPENAI_API_GETTING_STARTED_GUIDE.md) for detailed setup instructions.
 
-### Run Python on the command line
+3. Run the application
 
 ```console
 source activate
