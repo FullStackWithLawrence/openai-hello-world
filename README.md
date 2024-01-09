@@ -29,37 +29,19 @@ make init    # create a virtual environment
 
 ### Run Python on the command line
 
-1. Activate the Python virtual environment
-
 ```console
 source activate
-```
-
-2. Run the application
-
-```console
 python -m app.hello_world
 ```
 
 ### Build and run with Docker
 
-1. Build your Docker container
-
 ```console
 make docker-build   # run Docker compose to containerize your application
-```
-
-2. Run your Docker container
-
-```console
 make docker-run     # run the application as a Docker container
 ```
 
 ### Push your Docker container to DockerHub
-
-1. set DOCKERHUB_USERNAME and DOCKERHUB_ACCESS_TOKEN in `.env`
-
-2. push the container
 
 ```console
 make docker-push    # run Docker compose to containerize your application
