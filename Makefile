@@ -1,5 +1,8 @@
+
 SHELL := /bin/bash
-CONTAINER_NAME := hello_world
+REPO_NAME := openai-hello-world
+#TAGNAME := $(date +%Y%m%d%H%M)
+TAGNAME := "test"
 
 ifeq ($(OS),Windows_NT)
     PYTHON = python.exe
@@ -13,7 +16,7 @@ PIP = $(PYTHON) -m pip
 ifneq ("$(wildcard .env)","")
     include .env
 else
-    $(shell echo -e "OPENAI_API_KEY=PLEASE-ADD-ME\nENVIRONMENT=dev\n" >> .env)
+    $(shell echo -e "OPENAI_API_KEY=SET-ME-PLEASE\nENVIRONMENT=dev\nDOCKERHUB_USERNAME=localhost\nDOCKERHUB_ACCESS_TOKEN=SET-ME-PLEASE\n" >> .env)
 endif
 
 .PHONY: analyze pre-commit init lint clean test build release
@@ -55,7 +58,7 @@ init-dev:
 	make init
 	$(ACTIVATE_VENV) && \
 	$(PIP) install -r requirements/dev.txt && \
-	deactivate && \
+	deactivate
 
 test:
 	python -m unittest discover -s app/
@@ -70,10 +73,20 @@ lint:
 clean:
 	rm -rf venv node_modules app/__pycache__ package-lock.json
 
-build:
-	docker build -t ${CONTAINER_NAME} .
+docker-build:
+	source .env && \
+	docker build -t ${DOCKERHUB_USERNAME}/${REPO_NAME} .
 
-run:
+docker-push:
+	source .env && \
+    echo DOCKERHUB_USERNAME is ${DOCKERHUB_USERNAME} && \
+    echo DOCKERHUB_ACCESS_TOKEN is ${DOCKERHUB_ACCESS_TOKEN} && \
+	echo tagname is ${TAGNAME} && \
+	docker tag ${DOCKERHUB_USERNAME}/${REPO_NAME} ${DOCKERHUB_USERNAME}/${REPO_NAME}:${TAGNAME} && \
+	echo "${DOCKERHUB_ACCESS_TOKEN}" | docker login --username=${DOCKERHUB_USERNAME} --password-stdin && \
+	docker push ${DOCKERHUB_USERNAME}/${REPO_NAME}:${TAGNAME}
+
+docker-run:
 	source .env && \
 	docker run -it -e OPENAI_API_KEY=${OPENAI_API_KEY} -e ENVIRONMENT=prod ${CONTAINER_NAME}
 
@@ -84,9 +97,13 @@ run:
 
 help:
 	@echo '===================================================================='
-	@echo 'analyze             - generate code analysis report'
-	@echo 'release             - force a new release'
-	@echo 'init            - create a Python virtual environment and install dependencies'
+	@echo 'analyze         - generate code analysis report'
+	@echo 'release         - force a new GitHub release'
+	@echo 'init            - create a Python virtual environment and install prod dependencies'
+	@echo 'init-dev        - install dev dependencies'
 	@echo 'test            - run Python unit tests'
 	@echo 'lint            - run Python linting'
 	@echo 'clean           - destroy the Python virtual environment'
+	@echo 'docker-build    - build the Docker image'
+	@echo 'docker-push     - push the Docker image to DockerHub'
+	@echo 'docker-run      - run the Docker image'
