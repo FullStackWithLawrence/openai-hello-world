@@ -34,19 +34,6 @@ source activate
 python -m app.hello_world
 ```
 
-### Build and run with Docker
-
-```console
-make docker-build   # run Docker compose to containerize your application
-make docker-run     # run the application as a Docker container
-```
-
-### Push your Docker container to DockerHub
-
-```console
-make docker-push    # run Docker compose to containerize your application
-```
-
 Sample output:
 
 ```console
@@ -54,6 +41,16 @@ Sample output:
 Hello World
 Your language: Mandarin
 你好，世界 -- (Mandarin)
+```
+
+## Docker
+
+You can optionally build and run this application as a Docker container, and, you can push your container to DockerHub.
+
+```console
+make docker-build   # run Docker compose to containerize your application
+make docker-run     # run the application as a Docker container
+make docker-push    # run Docker compose to containerize your application
 ```
 
 ## Requirements
