@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=wrong-import-position
 # pylint: disable=R0801
-"""Test lambda_openai_v2 function."""
+"""Test application."""
 
 # python stuff
 import os
@@ -21,7 +21,7 @@ from app.hello_world import hello_world  # noqa: E402
 
 
 class TestApplication(unittest.TestCase):
-    """Test Index Lambda function."""
+    """Test application."""
 
     def test_application_does_not_crash(self):
         """Test that the application returns a value."""
