@@ -50,7 +50,7 @@ On the other hand, if you've forked this repo and are working on your own indepe
 
 ## Python Setup
 
-This project includes four distinct Python project, all located in api/terraform/python. They are located here because each of these projects is deployed to AWS Lambda, which in turn is being actively managed by Terraform.
+This project includes a single Python project located ./app.
 
 Note that this project leverages Dependabot for managing version numbers of all Python packages that are used in this project, regardless of where and how. Versions should always be up to date at the moment that you clone the repo. It therefore should never be necessary for you to manually bump PyPi package version numbers.
 
