@@ -34,15 +34,6 @@ source activate
 python -m app.hello_world
 ```
 
-Sample output:
-
-```console
-% make run
-Hello World
-Your language: Mandarin
-你好，世界 -- (Mandarin)
-```
-
 ## Docker
 
 You can optionally build and run this application as a Docker container, and, you can push your container to DockerHub.
