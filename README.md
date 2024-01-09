@@ -34,14 +34,14 @@ source activate
 python -m app.hello_world
 ```
 
-## Docker
+## OPTIONAL: Docker
 
-You can optionally build and run this application as a Docker container, and, you can push your container to DockerHub.
+This application can also run as a Docker container.
 
 ```console
 make docker-build   # run Docker compose to containerize your application
 make docker-run     # run the application as a Docker container
-make docker-push    # run Docker compose to containerize your application
+make docker-push    # push your Docker container to DockerHub
 ```
 
 ## Requirements
