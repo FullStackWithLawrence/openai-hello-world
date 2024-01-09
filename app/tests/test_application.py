@@ -28,6 +28,6 @@ class TestApplication(unittest.TestCase):
 
         # pylint: disable=broad-exception-caught
         try:
-            hello_world(language="Chinese")
+            hello_world()
         except Exception as e:
             self.fail(f"hello_world raised an exception: {e}")
