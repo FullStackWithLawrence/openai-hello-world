@@ -41,22 +41,22 @@ pre-commit:
 # ---------------------------------------------------------
 init:
 	make clean
-	npm install && \
 	$(PYTHON) -m venv venv && \
 	$(ACTIVATE_VENV) && \
 	$(PIP) install --upgrade pip && \
 	$(PIP) install -r requirements/prod.txt && \
-	deactivate && \
-	pre-commit install
+	deactivate
 
 # ---------------------------------------------------------
 # create python virtual environments for dev
 # ---------------------------------------------------------
 init-dev:
-	make init
+	make init && \
+	npm install && \
 	$(ACTIVATE_VENV) && \
 	$(PIP) install -r requirements/dev.txt && \
-	deactivate
+	deactivate && \
+	pre-commit install
 
 test:
 	python -m unittest discover -s app/
