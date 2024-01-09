@@ -1,7 +1,6 @@
 
 SHELL := /bin/bash
 REPO_NAME := openai-hello-world
-#TAGNAME := $(date +%Y%m%d%H%M)
 TAGNAME := "test"
 
 ifeq ($(OS),Windows_NT)
@@ -79,9 +78,6 @@ docker-build:
 
 docker-push:
 	source .env && \
-    echo DOCKERHUB_USERNAME is ${DOCKERHUB_USERNAME} && \
-    echo DOCKERHUB_ACCESS_TOKEN is ${DOCKERHUB_ACCESS_TOKEN} && \
-	echo tagname is ${TAGNAME} && \
 	docker tag ${DOCKERHUB_USERNAME}/${REPO_NAME} ${DOCKERHUB_USERNAME}/${REPO_NAME}:${TAGNAME} && \
 	echo "${DOCKERHUB_ACCESS_TOKEN}" | docker login --username=${DOCKERHUB_USERNAME} --password-stdin && \
 	docker push ${DOCKERHUB_USERNAME}/${REPO_NAME}:${TAGNAME}
