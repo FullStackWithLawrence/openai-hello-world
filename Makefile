@@ -72,7 +72,6 @@ clean:
 	rm -rf venv node_modules app/__pycache__ package-lock.json
 
 docker-build:
-	source .env && \
 	docker build -t ${DOCKERHUB_USERNAME}/${REPO_NAME} .
 
 docker-push:
@@ -85,6 +84,13 @@ docker-run:
 	source .env && \
 	docker run -it -e OPENAI_API_KEY=${OPENAI_API_KEY} -e ENVIRONMENT=prod ${DOCKERHUB_USERNAME}/${REPO_NAME}:latest
 
+docker-prune:
+	@if [ "`docker ps -aq`" ]; then \
+	    docker stop $(docker ps -aq); \
+	fi
+	@docker container prune -f
+	@docker image prune -af
+	@docker builder prune -af
 
 ######################
 # HELP
