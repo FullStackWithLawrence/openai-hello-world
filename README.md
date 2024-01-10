@@ -41,7 +41,8 @@ This application can also run as a Docker container.
 ```console
 make docker-build   # run Docker compose to containerize your application
 make docker-run     # run the application as a Docker container
-make docker-push    # push your Docker container to DockerHub
+make docker-push    # push your Docker container to DockerHub. DockerHub account and access token is required.
+make docker-prune   # prune all existing data in Docker: containers, images, cache.
 ```
 
 ## Requirements
