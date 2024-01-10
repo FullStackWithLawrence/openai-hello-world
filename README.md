@@ -39,10 +39,16 @@ python -m app.hello_world
 This application can also run as a Docker container.
 
 ```console
+make                # initializes a .env file for OPENAI_API_KEY and DOCKERHUB_ACCESS_TOKEN 
 make docker-build   # run Docker compose to containerize your application
 make docker-run     # run the application as a Docker container
-make docker-push    # push your Docker container to DockerHub. DockerHub account and access token is required.
-make docker-prune   # prune all existing data in Docker: containers, images, cache.
+```
+
+Other Docker commands
+
+```console
+make docker-push    # push your Docker container to DockerHub. A DockerHub account and DOCKERHUB_ACCESS_TOKEN is required.
+make docker-prune   # prune (permanently delete) all existing data in Docker: containers, images, cache.
 ```
 
 ## Requirements
