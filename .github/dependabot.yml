@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "terraform"
     directory: "/api/terraform/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
@@ -15,7 +15,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/api/terraform/python/layer_genai/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     labels:
       - "dependencies"
       - "python"
@@ -27,7 +27,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     labels:
       - "dependencies"
       - "python"
@@ -43,7 +43,7 @@ updates:
       - "javascript"
       - "automated pr"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     assignees:
       - "lpm0073"
     reviewers:
@@ -55,7 +55,7 @@ updates:
       - "javascript"
       - "automated pr"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     assignees:
       - "lpm0073"
     reviewers:
@@ -66,7 +66,7 @@ updates:
       - "dependencies"
       - "automated pr"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     assignees:
       - "lpm0073"
     reviewers:
