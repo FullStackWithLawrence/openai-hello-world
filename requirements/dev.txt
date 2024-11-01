@@ -8,14 +8,14 @@
 
 # Code linters, formatters, and security scanners
 # ------------
-black==24.8.0
+black==24.10.0
 flake8==7.1.1
 flake8-coding==1.3.2
 pre-commit==3.8.0
 isort==5.13.2
-mypy==1.11.2
+mypy==1.13.0
 pylint==3.3.1
 bandit==1.7.10
 pydocstringformatter==0.7.3
-tox==4.21.0
+tox==4.23.2
 codespell==2.3.0
