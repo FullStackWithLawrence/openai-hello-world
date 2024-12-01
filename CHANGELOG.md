@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/FullStackWithLawrence/openai-hello-world/compare/v0.1.1...v0.1.2) (2024-11-15)
+
+
+### Bug Fixes
+
+* force a new release ([08f593c](https://github.com/FullStackWithLawrence/openai-hello-world/commit/08f593cd7043f6c1b006e5ff96f475532b6f56b7))
+
 ## [0.1.1](https://github.com/FullStackWithLawrence/openai-hello-world/compare/v0.1.0...v0.1.1) (2024-01-09)
 
 ### Bug Fixes
