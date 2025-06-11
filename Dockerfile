@@ -1,6 +1,6 @@
 # Use the official Python 3.11 image from the Docker Hub.
 # This runs on Debian Linux.
-FROM python:3.11
+FROM python:3.12-slim-bookworm
 
 # Set the working directory to /app
 WORKDIR /dist
@@ -10,9 +10,8 @@ COPY app /dist/app
 COPY requirements/prod.txt requirements.txt
 
 # Set environment variables
-ENV ENVIRONMENT dev
-ENV OPENAI_API_KEY ""
-ENV PYTHONPATH /dist
+ENV ENVIRONMENT=dev
+ENV PYTHONPATH=/dist
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
