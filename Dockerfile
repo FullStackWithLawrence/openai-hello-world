@@ -1,6 +1,6 @@
-# Use the official Python 3.11 image from the Docker Hub.
+# Use the official Python image from the Docker Hub.
 # This runs on Debian Linux.
-FROM python:3.12-slim-bookworm
+FROM python:3.13-slim-trixie
 
 # Set the working directory to /app
 WORKDIR /dist

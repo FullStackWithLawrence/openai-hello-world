@@ -13,7 +13,7 @@ load_dotenv()
 
 # OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", None)
-OPENAI_API_MODEL = "gpt-3.5-turbo"
+OPENAI_API_MODEL = "gpt-4o-mini"
 OPENAI_API_TEMPERATURE = 0.0
 OPENAI_API_MAX_TOKENS = 64
 

@@ -10,13 +10,18 @@ to run in prod:
     docker run -it -e OPENAI_API_KEY=${OPENAI_API_KEY} -e ENVIRONMENT=prod ${CONTAINER_NAME}
 """
 import random
+from typing import Optional
 
 import openai
+from openai.types.chat import (
+    ChatCompletionSystemMessageParam,
+    ChatCompletionUserMessageParam,
+)
 
 from app import settings
 
 
-def hello_world(language: str = None):
+def hello_world(language: Optional[str] = None):
     """Translate 'Hello World' to a popular language."""
 
     # Set the OpenAI API key
@@ -36,14 +41,14 @@ def hello_world(language: str = None):
     model = settings.OPENAI_API_MODEL
     temperature = settings.OPENAI_API_TEMPERATURE
     max_tokens = settings.OPENAI_API_MAX_TOKENS
-    messages = [
-        {
-            "role": "system",
-            "content": f"""You are a helpful assistant who speaks {languages_str}
+    messages: list[ChatCompletionSystemMessageParam | ChatCompletionUserMessageParam] = [
+        ChatCompletionSystemMessageParam(
+            role="system",
+            content=f"""You are a helpful assistant who speaks {languages_str}
              You should respond with the correct, closest translation of "hello world" based on the language that the user
              requests. Your response should be in the format: '[hello world translation] -- ([language])'.""",
-        },
-        {"role": "user", "content": prompt},
+        ),
+        ChatCompletionUserMessageParam(role="user", content=prompt),
     ]
 
     # Call the OpenAI API
