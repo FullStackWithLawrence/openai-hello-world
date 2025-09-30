@@ -6,7 +6,7 @@ ifeq ($(OS),Windows_NT)
     PYTHON = python.exe
     ACTIVATE_VENV = venv\Scripts\activate
 else
-    PYTHON = python3.12
+    PYTHON = python3.13
     ACTIVATE_VENV = source venv/bin/activate
 endif
 PIP = $(PYTHON) -m pip
@@ -81,7 +81,6 @@ docker-push:
 	docker push ${DOCKERHUB_USERNAME}/${REPO_NAME}:latest
 
 docker-run:
-	source .env && \
 	docker run -it -e OPENAI_API_KEY=${OPENAI_API_KEY} -e ENVIRONMENT=prod ${DOCKERHUB_USERNAME}/${REPO_NAME}:latest
 
 docker-prune:
