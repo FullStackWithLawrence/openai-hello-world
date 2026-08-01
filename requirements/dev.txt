@@ -16,6 +16,6 @@ isort==8.0.1
 mypy==2.1.0
 pylint==4.0.6
 bandit==1.9.4
-pydocstringformatter==0.7.5
+pydocstringformatter==1.0.0
 tox==4.58.0
 codespell==2.4.2
