@@ -7,4 +7,4 @@
 
 
 python-dotenv==1.2.3
-openai==3.6.0
+openai==3.20.0
